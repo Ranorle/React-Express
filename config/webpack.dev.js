@@ -27,6 +27,7 @@ module.exports = {
         filename: "static/js/[name].js",
         chunkFilename: "static/js/[name].chunk.js",
         assetModuleFilename: "static.media/[hash:10][ext][query]",
+        clean: true,
     },
     //配置模块
     module: {
@@ -73,7 +74,7 @@ module.exports = {
                     cacheCompression:false,
                     plugins:[
                         'react-refresh/babel',//激活js的HMR功能
-                    ]
+                    ],
                 },
             },
         ],
