@@ -112,7 +112,7 @@ plugins: [
         host:"localhost",
         port:'3000',
         open:true,
-        hot:true,
+        hot:true,//实现热加载
         historyApiFallback:true,//解决前端路由刷新404
     },
 };
