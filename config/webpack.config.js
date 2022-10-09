@@ -31,10 +31,10 @@ module.exports = {
     entry: "./src/main.js",
     //配置出口文件
     output: {
-        path: isProduction ? path.resolve(__dirname, "../dist") : undefined,
-        filename: isProduction ? "static/js/[name].[contenthash:10].js" : "static/js/[name].js",
-        chunkFilename: isProduction ? "static/js/[name].[contenthash:10].chunk.js" : "static/js/[name].chunk.js",
-        assetModuleFilename: "static.media/[hash:10][ext][query]",
+        path: isProduction ? path.resolve(__dirname, "../dist/public") : undefined,
+        filename: isProduction ? "./js/[name].[contenthash:10].js" : "./js/[name].js",
+        chunkFilename: isProduction ? "./js/[name].[contenthash:10].chunk.js" : "./js/[name].chunk.js",
+        assetModuleFilename: "../public.media/[hash:10][ext][query]",
         clean: true,
     },
     //配置模块
@@ -106,7 +106,7 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, "../public"),
-                    to: path.resolve(__dirname, "../dist"),
+                    to: path.resolve(__dirname, "../dist/public"),
                     globOptions: {
                         ignore: ["**/index.html"],
                     },
