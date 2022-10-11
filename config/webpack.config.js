@@ -50,8 +50,9 @@ module.exports = {
                 use: getStyleLoaders("less-loader"),
             },
             {
-                test: /\.s[ac]ss$/,
-                use: getStyleLoaders("sass-loader"),
+                test: /\.s[ac]ss$/i,
+                include: path.resolve('src'),
+                use: ['thread-loader', 'style-loader', { loader: 'css-loader', options: { modules: true } }, 'sass-loader'],
             },
             {
                 test: /\.styl$/,
@@ -59,12 +60,11 @@ module.exports = {
             },
             //图片处理
             {
-                test: /\.(jpg?g|png|gif|webp|svg)/,
-                type: "asset",
-                parser: {
-                    dataUrlCondition: {
-                        maxSize: 10 * 1024,
-                    },
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                include: path.resolve('src'),
+                type: 'asset/resource',
+                generator: {
+                    filename: '_asset/[hash][ext][query]',
                 },
             },
             //处理其他资源
@@ -73,17 +73,32 @@ module.exports = {
                 type: "asset/resource",
             },
             //处理js
+            // {
+            //     test: /\.jsx?$/,
+            //     include: path.resolve(__dirname, '../src'),
+            //     loader: 'babel-loader',
+            //     options: {
+            //         cacheDirectory: true,
+            //         cacheCompression: false,
+            //         plugins:[
+            //             !isProduction && 'react-refresh/babel',//激活js的HMR功能
+            //         ].filter(Boolean),
+            //     },
+            // },
             {
-                test: /\.jsx?$/,
-                include: path.resolve(__dirname, '../src'),
-                loader: 'babel-loader',
-                options: {
-                    cacheDirectory: true,
-                    cacheCompression: false,
-                    plugins:[
-                        !isProduction && 'react-refresh/babel',//激活js的HMR功能
-                    ].filter(Boolean),
-                },
+                test: /\.(js|jsx|ts|tsx)$/,
+                include: path.resolve('src'),
+                use: [
+                    'thread-loader',
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/env', '@babel/preset-react', '@babel/preset-typescript'],
+                            cacheDirectory: true,
+                            plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+                        },
+                    },
+                ],
             },
         ],
     },
