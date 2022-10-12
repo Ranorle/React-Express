@@ -4,12 +4,16 @@ import styles from './App.scss';
 import {LoginDiv} from './components/Login'
 import {useState} from "react";
 import {number} from "joi";
+import {PageHead} from "./components/PageHead";
+
 // import {Link,Routes,Route} from "react-router-dom";
 export function App() {
     return <div id={'app'}>
-        <div className={styles.Background} >
-        <LoginDiv/>
+        <div className={styles.Background}>
+            <PageHead/>
+            <LoginDiv/>
         </div>
-        </div>;
+    </div>;
 }
+
 export default App;
