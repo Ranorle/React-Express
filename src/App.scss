@@ -1,26 +1,121 @@
 .Background {
-  display:flex;
-  background-image:url("pictures/93364704_p0.png");
-  background-size:100% 100%;
-  background-repeat:no-repeat;
-  height:100vh;
+  display: flex;
+  background-image: url("./pictures/93364704_p0.png");
+  -webkit-background-size: cover;
+  background-position: center center;
+  height: 100vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
+
   .LoginWindow {
-    //margin: 30vh 30vw;
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    width: 500px;
-    background-color: red;
-    justify-content: center;
-    align-items: center;
-    .Input{
-      margin: 5px 50px;
+    .ForgetContent{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      .WelcomeDivCN{
+        .WelcomeCN{
+          font-size: 30px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        }
+      }
+    .ForgetIp{
+      margin-top: 20px;
     }
-    .Welcome{
-      font-family: "";
+      .foButtonDiv{
+        width: 200px;
+      }
+      .foButton{
+       margin-top: 20px;
+      }
+    }
+    .LoginContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      .WelcomeDivEN{
+        .WelcomeEN{
+          font-size: 20px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+          font-style:italic;
+        }
+        margin-bottom: 40px;
+        margin-top: 10px;
+      }
+      .WelcomeDivCN{
+        .WelcomeCN{
+          font-size: 30px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        }
+      }
+    }
+
+    .forgetpsDiv{
+      width: 300px;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+    }
+    .ButtonDiv{
+      width: 300px;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .spButton{
+        margin-right: 10px;
+        margin-left: 25px;
+      }
+      .siButton{
+        margin-left: 10px;
+        margin-right: 25px;
+
+      }
+    }
+    .RegContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      .WelcomeDivEN{
+        .WelcomeEN{
+          font-size: 20px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+          font-style:italic;
+        }
+        margin-bottom: 40px;
+        margin-top: 10px;
+      }
+      .WelcomeDivCN{
+        .WelcomeCN{
+          font-size: 30px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        }
+      }
+    }
+    .DisplayDiv {
+      width: 600px;
+      img{
+        height: 600px;
+        width: 600px;
+        object-fit: cover;
+      }
+    }
+    //box-shadow: gray 0px 0px 3px 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    width: 900px;
+    background-color: white;
+    .Input {
+      margin: 5px 50px;
     }
   }
 }
