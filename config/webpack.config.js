@@ -72,6 +72,11 @@ module.exports = {
                 test: /\.(woff2?|ttf)/,
                 type: "asset/resource",
             },
+            //处理markdown
+            {
+                test: /\.md$/,
+                use: "raw-loader"
+            },
             //处理js
             // {
             //     test: /\.jsx?$/,
